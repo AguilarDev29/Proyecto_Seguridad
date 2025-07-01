@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizacion de Ingresos y Egresos</title>
+    <link rel="stylesheet" href="../assets/css/stilo1.css">
+    <link rel="stylesheet" href="../assets/css/stilo-general.css">
+</head>
+
+<body>
+    <!--Seccion Menu-->
+    <header>
+        <div class="logo">Administrador</div>
+        <nav class="nav-buttons">
+            <a href="./panelAdmin.html">Inicio</a>
+            <a href="./indexGestionUsuarioAdmin.html">Usuarios</a>
+            <a href="./Visualizar-ingresos-egresos.html">Ingresos/Egresos</a>
+            <a href="./gestionDeNoticias.html">Noticias</a>
+            <a href="../login.html">Cerrar sesión</a>
+            <a href="./Gestion-ingreso-egreso.html"><button class="qr-btn">QR Scanner</button></a>
+        </nav>
+    </header>
+    <!--Seccion Principal-->
+    <h2>Seleccionar Fecha:</h2>
+
+    <label for="fecha_inicio">Fecha de Inicio:</label>
+    <input type="date" id="fecha_inicio">
+
+    <label for="fecha_fin">Fecha Fin:</label>
+    <input type="date" id="fecha_fin">
+
+    <button id="Buscar">Consultar</button>
+    <h3>Resultados:</h3>
+
+    <table id="tabla_resultados">
+      <thead>
+        <tr>
+         <th>Fecha</th>
+         <th>Tipo (Entrada/Salida)</th>
+         <th>Detalle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--Aca apareceran las planillas-->
+      </tbody>
+    </table>
+
+    <button id="descargar">Descargar</button>
+
+</body>
+
+</html>

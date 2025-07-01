@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Empleado</title>
+    <link rel="stylesheet" href="../assets/css/styleGestionEmpleado.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Empleado</div>
+        <nav class="nav-buttons">
+            <a href="./PanelPrincipalEmpl.html">Inicio</a>
+            <a href="#profile-section">Mi Perfil</a>
+            <a href="#qr-section"><img src="../assets/img/codigo-qr.png" alt=""></a>
+            <a href="#horario-section">Horarios</a>
+            <a href="#comunicado-section">Reporte</a>
+            <a href="#settings-section">Configuración</a>
+            <a href="../login.html">Cerrar Sesión</a>
+        </nav>
+    </header>
+    <div class="dashboard-container">
+        <div class="main-content">
+
+            <div class="profile-card" id="profile-section">
+                <div class="profile-header-main">
+                    <h1>Mi Perfil</h1>
+                    <p>Gestiona tu foto de perfil y actualiza tu información personal.</p>
+                </div>
+
+                <div class="profile-section-main">
+                    <div class="profile-image-upload">
+                        <img id="profile-img-display" src="../assets/img/young-volleyball-man-player-court.jpg"
+                            alt="Foto de perfil">
+                        <input type="file" id="photo-upload" accept="image/*" style="display: none;">
+                        <button class="change-photo-button">Cambiar foto</button>
+                        <p class="photo-hint">Haz clic para cambiar tu foto.</p>
+                    </div>
+
+                    <div class="profile-details">
+                        <h2>Datos Personales</h2>
+
+                        <div class="profile-row">
+                            <p><strong>Nombre Completo:</strong> <span id="full-name-display">Milagros Sierra</span></p>
+                            <button class="edit-button">Editar</button>
+                        </div>
+                        <input type="text" id="edit-full-name" value="Milagros Sierra" style="display: none;"
+                            class="edit-input">
+
+                        <div class="profile-row">
+                            <p><strong>Email:</strong> <span id="user-email-display">milagros.sierra@empresa.com</span>
+                            </p>
+                            <button class="edit-button">Editar</button>
+                        </div>
+                        <input type="email" id="edit-user-email" value="milagros.sierra@empresa.com"
+                            style="display: none;" class="edit-input">
+
+                        <div class="profile-row">
+                            <p><strong>Teléfono:</strong> <span id="user-phone-display">+54 9 11 1234 5678</span></p>
+                            <button class="edit-button">Editar</button>
+                        </div>
+                        <input type="tel" id="edit-user-phone" value="+54 9 11 1234 5678" style="display: none;"
+                            class="edit-input">
+
+                        <div class="profile-row">
+                            <p><strong>Cargo:</strong> <span id="user-cargo-display">Desarrollador Frontend</span></p>
+                            <button class="edit-button">Editar</button>
+                        </div>
+                        <input type="text" id="edit-user-cargo" value="Desarrollador Frontend" style="display: none;"
+                            class="edit-input">
+
+                        <div class="profile-row">
+                            <p><strong>Departamento:</strong> <span id="user-department-display">Tecnología</span></p>
+                            <button class="edit-button">Editar</button>
+                        </div>
+                        <input type="text" id="edit-user-department" value="Tecnología" style="display: none;"
+                            class="edit-input">
+
+                        <button class="save-button" style="display: block;">Guardar Cambios</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-card" id="qr-section">
+                <div class="profile-header-main">
+                    <h1>Mi Código QR</h1>
+                    <p>Utiliza este código para registrar tu entrada y salida.</p>
+                </div>
+                <div class="qr-container">
+                    <img src="../assets/img/qr.avif" alt="Código QR de Empleado"
+                        style="border: 2px solid var(--color-orange-accent); border-radius: 5px; display: block; margin: 0 auto;">
+                    <p class="qr-hint">Escanea este código con el lector de la empresa.</p>
+                </div>
+                <button class="action-button">Descargar QR</button>
+            </div>
+
+            <div class="profile-card" id="horario-section">
+                <div class="profile-header-main">
+                    <h1>Historial de Horarios</h1>
+                    <p>Consulta tus registros de entrada y salida de la empresa.</p>
+                </div>
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Ubicación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="status-indicator entry"></span> Entrada</td>
+                            <td>01/06/2025</td>
+                            <td>08:00 AM</td>
+                            <td>Oficina Central</td>
+                        </tr>
+                        <tr>
+                            <td><span class="status-indicator exit"></span> Salida</td>
+                            <td>01/06/2025</td>
+                            <td>05:00 PM</td>
+                            <td>Oficina Central</td>
+                        </tr>
+                        <tr>
+                            <td><span class="status-indicator entry"></span> Entrada</td>
+                            <td>02/06/2025</td>
+                            <td>08:05 AM</td>
+                            <td>Oficina Central</td>
+                        </tr>
+                        <tr>
+                            <td><span class="status-indicator exit"></span> Salida</td>
+                            <td>02/06/2025</td>
+                            <td>05:15 PM</td>
+                            <td>Oficina Central</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="profile-card" id="comunicado-section">
+                <div class="profile-header-main">
+                    <h1>Reportar Comunicado / Novedad</h1>
+                    <p>Informa sobre cualquier incidente, solicitud o comunicado importante.</p>
+                </div>
+                <div class="section-content">
+                    <form action="#" method="post">
+                        <label for="comunicado-asunto">Asunto del Comunicado:</label>
+                        <input type="text" id="comunicado-asunto" name="comunicado-asunto"
+                            placeholder="Ej: Falla en equipo, solicitud de vacaciones, etc." class="full-width-input">
+
+                        <label for="comunicado-descripcion">Descripción detallada:</label>
+                        <textarea id="comunicado-descripcion" name="comunicado-descripcion" rows="8"
+                            placeholder="Describe aquí el comunicado o la novedad."></textarea>
+
+                        <button type="submit" class="action-button">Enviar Comunicado</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="profile-card" id="settings-section">
+                <div class="profile-header-main">
+                    <h1>Configuración de Cuenta</h1>
+                    <p>Gestiona las preferencias de tu cuenta de empleado.</p>
+                </div>
+                <div class="section-content">
+                    <div class="setting-item">
+                        <label for="notifications-toggle">Activar Notificaciones:</label>
+                        <input type="checkbox" id="notifications-toggle" checked>
+                    </div>
+                    <div class="setting-item">
+                        <label for="password-change">Cambiar Contraseña:</label>
+                        <button class="action-button small">Cambiar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

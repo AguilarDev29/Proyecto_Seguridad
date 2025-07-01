@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel administrador</title>
+    <link rel="stylesheet" href="../assets/css/stylePanelAdmin.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="panel-admin">
+    <header>
+        <div class="logo">Administrador</div>
+        <nav class="nav-buttons">
+            <a href="./panelAdmin.html">Inicio</a>
+            <a href="./indexGestionUsuarioAdmin.html">Usuarios</a>
+            <a href="./Visualizar-ingresos-egresos.html">Ingresos/Egresos</a>
+            <a href="./gestionDeNoticias.html">Noticias</a>
+            <a href="../login.html">Cerrar sesión</a>
+            <a href="./Gestion-ingreso-egreso.html"><button class="qr-btn">QR Scanner</button></a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Bienvenido </h1>
+    </section>
+
+    <section class="news-section">
+        <div class="news-card">
+            <img src="../assets/img/actualizacion2.jpg" alt="Actualización">
+            <div class="content">
+                <h3>Actualización de Sistema</h3>
+                <p>El sistema fue actualizado el 28 de mayo.</p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <img src="../assets/img/Imagen de WhatsApp 2025-05-29 a las 20.08.31_550f0b5b.jpg" alt="Feriado">
+            <div class="content">
+                <h3>Feriado Próximo</h3>
+                <p>El establecimiento permanecerá cerrado el 1° de junio.</p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <img src="../assets/img/field-hockey-players-tournament-game.jpg" alt="Evento">
+            <div class="content">
+                <h3>Evento Especial</h3>
+                <p>El sábado habrá una jornada recreativa para el personal.</p>
+            </div>
+        </div>
+
+        <section class="news-section" id="news-list">
+            <!-- Las tarjetas se insertarán aquí con JS -->
+        </section>
+
+    </section>
+
+    <script src="../assets/js/noticias.js"></script>
+</body>
+
+</html>

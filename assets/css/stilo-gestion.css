@@ -1,0 +1,117 @@
+/*Seccion Menu*/
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--main-bg);
+    color: var(--text-light);
+}
+header {
+    display: flex;
+    justify-content: space-between; 
+    padding: 1rem 2rem;
+    background-color: var(--card-bg);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box; 
+}
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--highlight);
+}
+.nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
+.nav-buttons a,
+.qr-btn {
+    background: transparent;
+    border: 1px solid var(--highlight);
+    border-radius: 8px;
+    padding: 0.4rem 0.8rem;
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    transition: background 0.3s, color 0.3s;
+    cursor: pointer;
+}
+.nav-buttons a:hover,
+.qr-btn:hover{
+    background-color: var(--highlight);
+    color: #fff;
+}
+nav { 
+    display: flex; 
+    align-items: center; 
+    gap: 1.5rem; 
+}
+nav a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+}
+nav a:hover {
+    color: var(--highlight);
+}
+
+.qr-btn {
+    background-color: var(--highlight);
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor:pointer;
+    width: auto;
+    text-align: center;
+
+}
+/*Seccion Principal*/
+
+h2 {
+  color: #ff6600;
+  padding: 15px;
+  text-align: center;
+}
+h3{
+    color: #ff6600;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+section {
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px #1a1a1a;
+}
+section img{
+    width: auto;
+    height: 10rem;
+    border-radius: 10%;
+    vertical-align: middle; 
+    margin-right: 8px;
+    object-fit: scale-down;
+}
+button {
+    background: transparent;
+    border: 1px solid var(--highlight);
+    border-radius: 8px;
+    padding: 0.4rem 0.8rem;
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 770;
+    transition: background 0.3s, color 0.3s;
+    cursor: pointer;
+    margin-right: 14px;
+}
+button:hover {
+  background-color: #ff6600;
+}

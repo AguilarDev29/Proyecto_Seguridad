@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar contraseña</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/styleChangePassw.css">
+</head>
+
+<body>
+    <div class="change-container">
+        <h2>Cambiar Contraseña</h2>
+        <form>
+            <div class="form-group">
+                <label for="current-password">Contraseña actual</label>
+                <input type="password" id="current-password" placeholder="Tu contraseña actual" required />
+            </div>
+            <div class="form-group">
+                <label for="new-password">Nueva contraseña</label>
+                <input type="password" id="new-password" placeholder="Nueva contraseña" required />
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirmar nueva contraseña</label>
+                <input type="password" id="confirm-password" placeholder="Repite la nueva contraseña" required />
+            </div>
+            <button type="submit" class="btn-change">Guardar</button>
+        </form>
+        <p class="footer-text">Tu nueva contraseña debe tener al menos 8 caracteres</p>
+         <a href="../login.html" class="back-link">← Volver al inicio de sesión</a>
+    </div>
+</body>
+
+</html>

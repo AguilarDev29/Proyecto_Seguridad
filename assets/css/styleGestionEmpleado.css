@@ -1,0 +1,728 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --main-bg: #0d0d0d;
+    /* Fondo principal, ahora se usa en body */
+    --highlight: #ff6600;
+    /* Naranja de acento */
+    --text-light: #f2f2f2;
+    /* Gris muy claro / casi blanco */
+    --text-muted: #cccccc;
+    /* Gris claro */
+    --card-bg: #1a1a1a;
+    /* Negro grisáceo para fondos de tarjetas y cabecera */
+    --color-dark-primary: var(--main-bg);
+    --color-orange-accent: var(--highlight);
+    --color-light-text: var(--text-light);
+    --color-medium-gray: var(--text-muted);
+    --color-dark-secondary: var(--card-bg);
+
+    /* Colores derivados para efectos y bordes, basados en la paleta */
+    --color-border: #1a1a1a;
+    /* Usamos el secundario oscuro para bordes */
+    --color-shadow: rgba(0, 0, 0, 0.7);
+    /* Sombra oscura */
+    --color-hover-orange: #e05c00;
+    /* Un naranja ligeramente más oscuro para hover */
+    --color-sidebar-active-bg: rgba(255, 102, 0, 0.2);
+    /* Naranja semi-transparente para sidebar activo */
+
+    /* Colores para historial de entrada/salida */
+    --entry-color: var(--highlight);
+    /* Naranja para entrada */
+    --exit-color: var(--text-muted);
+    /* Gris para salida */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--main-bg);
+    color: var(--text-light);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: var(--card-bg);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--highlight);
+}
+
+.nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 1rem;
+}
+
+
+
+.nav-buttons a img {
+     height: 1.2em; /* Escala con el texto */
+    width: auto;
+    object-fit: contain;
+    display: block;
+    height: 100%;
+
+
+}
+
+.nav-buttons a img:hover {
+
+    background-color: #1a1a1a;
+
+}
+
+.nav-buttons a,
+.qr-btn {
+    background: transparent;
+    border: 1px solid var(--highlight);
+    border-radius: 8px;
+    padding: 0.4rem 0.8rem;
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    transition: background 0.3s, color 0.3s;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+
+}
+
+.nav-buttons a:hover,
+.qr-btn:hover {
+    background-color: var(--highlight);
+    color: #fff;
+}
+
+
+
+.qr-btn {
+    background-color: var(--highlight);
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    width: auto;
+    text-align: center;
+}
+
+
+/* Contenedor principal del Dashboard */
+.dashboard-container {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 80vh;
+    background-color: var(--color-dark-secondary);
+    border-radius: 12px;
+    box-shadow: 0 0 20px var(--color-shadow);
+    overflow: hidden;
+    margin-top: 20px;
+    /* Margen para separarlo de la cabecera */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Contenido Principal */
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+     background-color: var(--element-bg-dark);
+    width: 100%;
+}
+
+.profile-card {
+    background-color: var(--color-dark-secondary);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px var(--color-shadow);
+    margin-bottom: 30px;
+    display: none;
+   
+}
+
+
+.profile-card:target {
+    /* Cuando el ID de la card coincide con el fragmento URL */
+    display: block;
+    /* Muestra la tarjeta */
+}
+
+.profile-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.profile-row p {
+    margin: 0;
+    flex: 1;
+}
+
+.edit-button {
+    margin-left: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.edit-input {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.save-button {
+    margin-top: 20px;
+    padding: 8px 16px;
+}
+
+
+/* Si quieres que "Mi Perfil" sea visible por defecto al cargar la página */
+#profile-section {
+    display: block;
+}
+
+
+.profile-header-main {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 20px;
+}
+
+.profile-header-main h1 {
+    color: var(--color-orange-accent);
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.profile-header-main p {
+    color: var(--color-medium-gray);
+    font-size: 1em;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.section-content {
+    margin-top: 20px;
+}
+
+/* Sección de Perfil (Mi Perfil) */
+.profile-section-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.profile-image-upload {
+    text-align: center;
+    position: relative;
+}
+
+.profile-image-upload img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-orange-accent);
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.5);
+    margin-bottom: 15px;
+}
+
+.change-photo-button {
+    background-color: var(--color-orange-accent);
+    color: var(--color-dark-primary);
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.change-photo-button:hover {
+    background-color: var(--color-hover-orange);
+}
+
+.photo-hint {
+    color: var(--color-medium-gray);
+    font-size: 0.85em;
+    margin-top: 5px;
+}
+
+.profile-details {
+    width: auto;
+    max-width: 600px;
+
+}
+
+.profile-details h2 {
+    color: var(--color-light-text);
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 10px;
+}
+
+.dato {
+    display: grid;
+    grid-template-columns: 150px 1fr auto;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+    ;
+
+}
+
+.dato label {
+    font-weight: bold;
+}
+
+.dato span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.dato button {
+    flex-shrink: 0;
+    margin-left: 20px;
+}
+
+
+.edit-input {
+    display: none;
+    margin-left: 150px; /* mismo ancho que la primera columna */
+    width: calc(100% - 160px); /* compensar márgenes */
+    margin-bottom: 10px;
+}
+
+.save-button {
+    margin-top: 20px;
+}
+
+.edit-input {
+    width: calc(100% - 130px);
+    padding: 8px 12px;
+    background-color: var(--color-dark-primary);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    color: var(--color-light-text);
+    font-size: 1em;
+    margin-bottom: 15px;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.edit-button {
+    background-color: transparent;
+    color: var(--color-orange-accent);
+    border: 1px solid var(--color-orange-accent);
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.edit-button:hover {
+    background-color: var(--color-orange-accent);
+    color: var(--color-dark-primary);
+}
+
+.save-button {
+    background-color: var(--color-orange-accent);
+    color: var(--color-dark-primary);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.save-button:hover {
+    background-color: var(--color-hover-orange);
+}
+
+/* Sección de Código QR */
+.qr-container {
+    text-align: center;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: var(--color-dark-primary);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.4);
+    max-width: 300px;
+    overflow: hidden;
+}
+
+
+.qr-hint {
+    color: var(--color-medium-gray);
+    font-size: 0.9em;
+    margin-top: 15px;
+}
+
+.qr-container {
+    text-align: center;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: var(--color-dark-primary);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.4);
+    max-width: 250px;
+}
+
+/* Estilos para el canvas/imagen del QR */
+
+.qr-container img {
+    display: block;
+    margin: 0 auto;
+    border: 2px solid var(--color-orange-accent);
+    border-radius: 5px;
+    max-width: 100%;
+    height: auto;
+}
+
+.action-button {
+    background-color: var(--color-orange-accent);
+    color: var(--color-dark-primary);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 250px;
+}
+
+.action-button:hover {
+    background-color: var(--color-hover-orange);
+}
+
+/* Historial / Horarios */
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px var(--color-shadow);
+}
+
+.history-table th,
+.history-table td {
+    border: 1px solid var(--color-border);
+    padding: 15px 12px;
+    text-align: left;
+    color: var(--color-light-text);
+}
+
+.history-table th {
+    background-color: var(--color-dark-primary);
+    color: var(--color-orange-accent);
+    font-size: 0.95em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.history-table tbody tr:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Indicadores de estado para entrada/salida */
+.status-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.status-indicator.entry {
+    background-color: var(--entry-color);
+}
+
+.status-indicator.exit {
+    background-color: var(--exit-color);
+}
+
+
+/* Comunicados / Novedades */
+.full-width-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background-color: var(--color-dark-primary);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    color: var(--color-light-text);
+    font-size: 1em;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+textarea.full-width-input {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.section-content label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--color-light-text);
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+#comunicado-asunto,
+#comunicado-descripcion {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background-color: var(--color-dark-primary);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    color: var(--color-light-text);
+    font-size: 1em;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+#comunicado-descripcion {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Sección de Configuración de Cuenta */
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.setting-item:last-child {
+    border-bottom: none;
+}
+
+.setting-item label {
+    font-size: 1.1em;
+    color: var(--color-light-text);
+}
+
+.action-button.small {
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+
+/* Media Queries para Responsividad */
+@media (max-width: 992px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .nav-buttons {
+        margin-top: 1rem;
+        justify-content: center;
+        gap: 0.8rem;
+    }
+
+    .dashboard-container {
+        flex-direction: column;
+        max-width: 95%;
+        /* Ajustado para que el contenedor ocupe más ancho en pantallas medianas */
+        margin-top: 15px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .profile-header-main h1 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+
+    header {
+        padding: 0.8rem 1rem;
+    }
+
+    header .logo {
+        font-size: 1.3rem;
+    }
+
+    .nav-buttons a {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .dashboard-container {
+        border-radius: 8px;
+        margin-top: 10px;
+        max-width: 100%;
+        /* Aseguramos que ocupe todo el ancho disponible */
+    }
+
+    .profile-card {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .profile-header-main {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+
+    .profile-header-main h1 {
+        font-size: 1.8em;
+    }
+
+    .profile-details p {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 10px;
+    }
+
+    .profile-details p strong {
+        margin-bottom: 5px;
+        min-width: unset;
+    }
+
+    .profile-details p span {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    .edit-input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .edit-button {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .save-button {
+        max-width: 100%;
+    }
+
+    .history-table th,
+    .history-table td {
+        font-size: 0.9em;
+        padding: 10px 8px;
+    }
+
+    .history-table th {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 0.5rem;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .profile-card {
+        padding: 15px;
+    }
+
+    .profile-header-main h1 {
+        font-size: 1.5em;
+    }
+
+    .profile-image-upload img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .change-photo-button {
+        padding: 6px 10px;
+        font-size: 0.9em;
+    }
+
+    .qr-container {
+        padding: 15px;
+        max-width: 200px;
+    }
+
+    .qr-container img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .action-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .full-width-input,
+    textarea {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .section-content label {
+        font-size: 1em;
+    }
+}

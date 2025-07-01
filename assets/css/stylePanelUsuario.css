@@ -1,0 +1,272 @@
+:root {
+    --main-bg: #0d0d0d;
+    --highlight: #ff6600;
+    --text-light: #f2f2f2;
+    --text-dark: #1a1a1a;
+    --card-bg: #1a1a1a;
+    --border-color: #cccccc;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--main-bg);
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: var(--card-bg);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--border-color);
+}
+
+header .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--highlight);
+}
+
+.nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-buttons a img {
+     height: 1.2em; /* Escala con el texto */
+    width: auto;
+    object-fit: contain;
+    display: block;
+    height: 100%;
+}
+
+.nav-buttons a img:hover {
+
+    background-color: #1a1a1a;
+
+}
+
+.nav-buttons a,
+.qr-btn {
+    background: transparent;
+    border: 1px solid var(--highlight);
+    border-radius: 8px;
+    padding: 0.4rem 0.8rem;
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    transition: background 0.3s, color 0.3s;
+    cursor: pointer;
+
+}
+
+.nav-buttons a:hover,
+.qr-btn:hover {
+    background-color: var(--highlight);
+    color: #fff;
+}
+
+
+nav a:hover {
+    color: var(--highlight);
+}
+
+
+
+/* Contenido Principal */
+.container {
+    flex-grow: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: var(--highlight);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Sección de Noticias */
+.news-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.news-card {
+    position: relative;
+    background-color: var(--card-bg); /* Importante para el fondo sólido si no hay imagen */
+    padding: 0;
+    border-radius: 8px;
+    border: 1px solid var(--border-color); /* Borde delgado para separar del fondo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 250px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Transición para el borde */
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada al hover */
+}
+
+/* Superposición para el texto sobre la imagen */
+.news-overlay {
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semitransparente */
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease; /* Transición para el overlay */
+}
+
+.news-card:hover .news-overlay {
+    background-color: rgba(0, 0, 0, 0.75); 
+}
+
+/* Clases para imágenes de fondo */
+.news-card--bg1 {
+    background-image: url('img/concepto\ \(1\).jpg');
+}
+
+.news-card--bg2 {
+    background-image: url('img/sala-de-espera-con-monitores.jpg');
+}
+
+.news-card--bg3 {
+    background-image: url('img/istockphoto-1199145131-1024x1024.jpg');
+}
+
+/* Estilos para el placeholder de noticias */
+.news-card.placeholder {
+    background-image: none;
+    background-color: var(--card-bg); /* El color de fondo se mantiene para el placeholder */
+    border: 1px dashed var(--border-color); /* Borde punteado para el placeholder */
+    opacity: 0.7;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem; /* Restauramos el padding para el placeholder si no usa overlay */
+}
+
+/*  el contenido del placeholder no tenga el overlay si no lo necesita */
+.news-card.placeholder .news-overlay {
+    background-color: transparent;
+    padding: 0;
+}
+
+
+.news-title {
+    color: var(--highlight);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.news-date {
+    color: var(--border-color);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.news-content {
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.5;
+    flex-grow: 1;
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    display: inline-block;
+    color: var(--highlight);
+    text-decoration: none;
+    font-weight: bold;
+    align-self: flex-start;
+    transition: color 0.2s ease;
+}
+
+.read-more:hover {
+    color: #ff8c40;
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--card-bg);
+    color: var(--border-color);
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .nav-buttons {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .container {
+        padding: 1.5rem;
+    }
+
+    .news-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-buttons a {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .news-title {
+        font-size: 1.2rem;
+    }
+
+    .news-content {
+        font-size: 0.9rem;
+    }
+}
+
+

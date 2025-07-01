@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="../assets/css/styleGestionUsuario.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Usuario</div> 
+        <nav class="nav-buttons">
+            <a href="./indexVistaUsuario.html">Inicio</a>
+            <a href="#profile-section">Mi Perfil</a>
+             <a href="#qr-section"><img src="../assets/img/codigo-qr.png" alt="ilustrativa codigo Qr"></a>
+            <a href="#history-section">Historial</a>
+            <a href="#membership-section">Membresía</a>
+            <a href="../login.html">Cerrar sesión</a>
+        </nav>
+    </header>
+
+    <div class="dashboard-container">
+        <div class="main-content">
+            <div class="profile-card" id="profile-section">
+                <div class="profile-header-main">
+                    <h1>Perfil</h1>
+                    <p>Cambia tu foto de perfil y edita tu información personal.</p>
+                </div>
+
+                <div class="profile-section-main" id="personal-data-section">
+                    <div class="profile-image-upload">
+                        <img src="../assets/img/hla.jpg" alt="Foto de perfil">
+                        <button class="change-photo-button">Cambiar foto</button>
+                        <p class="photo-hint">JPG o PNG</p>
+                        <p class="photo-hint">Tamaño recomendado: 100x100px</p>
+                    </div>
+
+                    <div class="profile-details">
+                        <h2>Datos Personales</h2>
+                        <p><strong>Nombre completo:</strong> <span id="display-name">Valeria Lucia Suarez</span> <button class="edit-button">Editar</button></p>
+                        <input type="text" id="edit-name" value="Valeria Lucia Suarez" style="display:none;" class="edit-input">
+
+                        <p><strong>Email:</strong> <span id="display-email">ValeS@gmail.com</span> <button class="edit-button">Editar</button></p>
+                        <input type="email" id="edit-email" value="ValeS@gmail.com" style="display:none;" class="edit-input">
+
+                        <p><strong>Teléfono:</strong> <span id="display-phone">381-234 5678</span> <button class="edit-button">Editar</button></p>
+                        <input type="tel" id="edit-phone" value="381-234 5678" style="display:none;" class="edit-input">
+
+                        <p><strong>Fecha de Nacimiento:</strong> <span id="display-dob">15/07/1990</span> <button class="edit-button">Editar</button></p>
+                        <input type="date" id="edit-dob" value="1990-07-15" style="display:none;" class="edit-input">
+
+                        <p><strong>Género:</strong> <span id="display-gender">Femenino</span> <button class="edit-button">Editar</button></p>
+                        <input type="text" id="edit-gender" value="Femenino" style="display:none;" class="edit-input">
+
+                        <p><strong>Dirección:</strong> <span id="display-address">Av. Siempre Viva 742</span> <button class="edit-button">Editar</button></p>
+                        <input type="text" id="edit-address" value="Av. Siempre Viva 742" style="display:none;" class="edit-input">
+                        <button class="save-button" >Guardar Cambios</button>
+                    </div>
+                </div>
+
+                <div class="profile-card" id="qr-section">
+                    <div class="profile-header-main">
+                        <h1>Código QR</h1>
+                        <p>Escanea este código para registrar tu ingreso o egreso.</p>
+                    </div>
+                    <div class="qr-container">
+                        <img src="../assets/img/qr.avif" alt="Código QR de Acceso">
+                        <p class="qr-hint">Válido por 5 minutos</p>
+                    </div>
+                </div>
+
+                <div class="profile-card" id="history-section">
+                    <div class="profile-header-main">
+                        <h1>Historial de Actividad</h1>
+                        <p>Consulta tus últimos registros de ingreso y egreso.</p>
+                    </div>
+                    <div class="section-content">
+                        <table class="history-table">
+                            <thead>
+                                <tr>
+                                    <th>Tipo</th>
+                                    <th>Fecha</th>
+                                    <th>Hora</th>
+                                    <th>Ubicación</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Ingreso</td>
+                                    <td>25/05/2025</td>
+                                    <td>10:30</td>
+                                    <td>Gimnasio Principal</td>
+                                </tr>
+                                <tr>
+                                    <td>Egreso</td>
+                                    <td>25/05/2025</td>
+                                    <td>12:00</td>
+                                    <td>Gimnasio Principal</td>
+                                </tr>
+                                <tr>
+                                    <td>Ingreso</td>
+                                    <td>24/05/2025</td>
+                                    <td>08:00</td>
+                                    <td>Cancha de Tenis</td>
+                                </tr>
+                                <tr>
+                                    <td>Egreso</td>
+                                    <td>24/05/2025</td>
+                                    <td>09:00</td>
+                                    <td>Cancha de Tenis</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <div class="profile-card" id="membership-section">
+                    <div class="profile-header-main">
+                        <h1>Membresía</h1>
+                        <p>Estado y detalles de tu membresía actual.</p>
+                    </div>
+                    <div class="section-content">
+                        <div class="membership-status active">
+                            <span>Estado: Activa</span>
+                        </div>
+                        <p><strong>Tipo de Membresía:</strong> Premium</p>
+                        <p><strong>Fecha de Inicio:</strong> 01/01/2025</p>
+                        <p><strong>Fecha de Vencimiento:</strong> 01/01/2026</p>
+                        <p><strong>Beneficios:</strong> Acceso ilimitado a todas las instalaciones, 2 sesiones de
+                            entrenamiento personal al mes.</p>
+                        <button class="action-button">Renovar Membresía</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

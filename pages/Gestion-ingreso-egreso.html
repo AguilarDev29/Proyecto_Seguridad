@@ -1,0 +1,44 @@
++<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de Accesos y Egresos</title>
+    <link rel="stylesheet" href="../assets/css/stilo-gestion.css">
+    <link rel="stylesheet" href="../assets/css/stilo-general.css">
+
+ 
+</head>
+<body>
+    <!--Seccion Menu-->
+    <header>
+        <div class="logo">Administrador</div>
+        <nav class="nav-buttons">
+            <a href="./panelAdmin.html">Inicio</a>
+            <a href="./indexGestionUsuarioAdmin.html">Usuarios</a>
+            <a href="./Visualizar-ingresos-egresos.html">Ingresos/Egresos</a>
+            <a href="./gestionDeNoticias.html">Noticias</a>
+            <a href="../login.html">Cerrar sesión</a>
+            <a href="./Gestion-ingreso-egreso.html"><button class="qr-btn">QR Scanner</button></a> 
+        </nav>
+    </header>
+    <!--Seccion Principal-->
+    <h2>Control de Acceso:</h2>
+
+    <section id="infoPersona">
+      <h3>Datos del Usuario:</h3>
+      <div id="datos">
+        <p><img src="../assets/img/young-bearded-man-with-striped-shirt.jpg" alt=""></p>
+        <p><strong>ID:</strong> <span id="id"></span></p>
+        <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+        <p><strong>Membresía:</strong> <span id="membresia"></span></p>
+      </div>
+    </section>
+    <br>
+
+   <button id="btn-verificar">Verificar</button>
+   <button id="btn-cancelar">Cancelar</button>
+
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/styleLog.css">
+    <script src="./assets/js/login.js" defer></script>
+
+
+</head>
+<body>
+    <div class="login-container">
+    <h2>Iniciar Sesión</h2>
+   <form onsubmit="login(event)">
+  <div class="form-group">
+    <label for="username">Usuario</label>
+    <input type="text" id="username" placeholder="Ingresa tu usuario" required />
+  </div>
+  <div class="form-group">
+    <label for="password">Contraseña</label>
+    <input type="password" id="password" placeholder="Ingresa tu contraseña" required />
+  </div>
+  <button type="submit" class="btn-login">Entrar</button>
+  <p id="error" style="color: red; display: none;"></p>
+</form>
+   <a href="./pages/ChangePassw.html" class="footer-text"> <p >¿Primera vez? Cambia tu contraseña al iniciar sesión</p></a>
+  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,358 @@
+:root {
+    --main-bg: #0d0d0d;
+    --highlight: #ff6600;
+    --text-light: #f2f2f2;
+    --text-dark: #1a1a1a;
+    --card-bg: #1a1a1a;
+    --border-color: #cccccc;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--main-bg);
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: var(--card-bg);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--border-color);
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--highlight);
+}
+
+.nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-buttons a,
+.qr-btn {
+    background: transparent;
+    border: 1px solid var(--highlight);
+    border-radius: 8px;
+    padding: 0.4rem 0.8rem;
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    transition: background 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+.nav-buttons a:hover,
+.qr-btn:hover {
+    background-color: var(--highlight);
+    color: #fff;
+}
+
+nav { 
+    display: flex; 
+    align-items: center; 
+    gap: 1.5rem; 
+}
+
+
+nav a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: var(--highlight);
+}
+
+.qr-btn {
+    background-color: var(--highlight);
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    width: auto;
+    text-align: center;
+}
+
+/* Contenido Principal */
+.container {
+    flex-grow: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: var(--highlight);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.section-header h2 {
+    color: var(--text-light);
+    margin: 0;
+}
+
+.add-button {
+    background-color: var(--highlight);
+    border: none;
+    color: var(--main-bg);
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: #ff8c40;
+}
+
+/* Estilos de Formulario */
+.form-card {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--main-bg);
+    color: var(--text-light);
+    box-sizing: border-box;
+}
+
+.form-group input::placeholder {
+    color: var(--border-color);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--highlight);
+    box-shadow: 0 0 0 2px rgba(255, 102, 0, 0.5);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.form-actions button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-actions .btn-save {
+    background-color: var(--highlight);
+    color: var(--main-bg);
+}
+
+.form-actions .btn-save:hover {
+    background-color: #ff8c40;
+}
+
+.form-actions .btn-cancel {
+    background-color: var(--border-color);
+    color: var(--text-dark);
+}
+
+.form-actions .btn-cancel:hover {
+    background-color: #b3b3b3;
+}
+
+/* Estilos de Tabla */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.user-table th,
+.user-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.user-table th {
+    background-color: var(--highlight);
+    color: var(--main-bg);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.user-table tr:last-child td {
+    border-bottom: none;
+}
+
+.user-table tbody tr:hover {
+    background-color: #262626;
+}
+
+.user-table .actions button {
+    background-color: transparent;
+    border: 1px solid var(--highlight);
+    color: var(--highlight);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 500;
+    margin-right: 0.5rem;
+}
+
+.user-table .actions button:last-child {
+    margin-right: 0;
+}
+
+.user-table .actions button:hover {
+    background-color: var(--highlight);
+    color: var(--main-bg);
+}
+
+.user-table .actions .delete-btn {
+    border-color: #ff3333;
+    color: #ff3333;
+}
+
+.user-table .actions .delete-btn:hover {
+    background-color: #ff3333;
+    color: var(--main-bg);
+}
+
+/* Estilos para el QR (placeholder) */
+.qr-placeholder {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--main-bg);
+    border: 1px dashed var(--highlight);
+    border-radius: 8px;
+    color: var(--text-light);
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--card-bg);
+    color: var(--border-color);
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .nav-buttons {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .user-table, .form-card {
+        padding: 1rem;
+    }
+
+    .user-table th, .user-table td {
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-buttons a, .qr-btn {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .add-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .user-table {
+        font-size: 0.9rem;
+    }
+
+    .user-table .actions button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+        margin-right: 0.2rem;
+    }
+}

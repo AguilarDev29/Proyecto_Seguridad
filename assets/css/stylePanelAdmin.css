@@ -1,0 +1,179 @@
+ /*panel administrador*/
+
+
+.panel-admin {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--main-bg);
+    color: var(--text-light);
+}
+
+header {
+    display: flex;
+    justify-content: space-between; 
+    padding: 1rem 2rem;
+    background-color: var(--card-bg);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--highlight);
+}
+
+.nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-buttons a,
+.qr-btn {
+    background: transparent;
+    border: 1px solid var(--highlight);
+    border-radius: 8px;
+    padding: 0.4rem 0.8rem;
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    transition: background 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+.nav-buttons a:hover,
+.qr-btn:hover {
+    background-color: var(--highlight);
+    color: #fff;
+}
+
+nav { 
+    display: flex; 
+    align-items: center; 
+    gap: 1.5rem; 
+}
+
+
+nav a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: var(--highlight);
+}
+
+.qr-btn {
+    background-color: var(--highlight);
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    width: auto;
+    text-align: center;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;
+    
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://images.unsplash.com/photo-1573164713988-8665fc963095?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTQ1OTl8MHwxfHNlYXJjaHwxM3x8YWRtaW58ZW58MHx8fHwxNzE2OTMzMDA2fDA&ixlib=rb-4.0.3&q=80&w=1080') center/cover no-repeat;
+    opacity: 1;
+    z-index: 0;
+}
+
+.hero h1 {
+    color: white;
+    font-size: 2.5rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1rem;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+.news-section {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    
+}
+
+
+.news-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+}
+
+.news-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover
+}
+
+.news-card .content {
+    padding: 1rem;
+}
+
+.news-card h3 {
+    color: var(--highlight);
+    margin: 0 0 0.5rem;
+}
+
+
+@media screen and (max-width: 600px) {
+    header {
+        padding: 1rem; 
+        justify-content: center; 
+    }
+    .nav-buttons {
+        width: 100%; 
+        justify-content: center; 
+        margin-top: 1rem; 
+    }
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    .news-section {
+        padding: 1rem;
+    }
+}

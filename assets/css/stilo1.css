@@ -1,0 +1,138 @@
+/*Seccion Menu*/
+body{
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--main-bg);
+    color: var(--text-light);
+}
+header {
+    display: flex;
+    justify-content: space-between; 
+    padding: 1rem 2rem;
+    background-color: var(--card-bg);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box; 
+}
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--highlight);
+}
+.nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
+.nav-buttons a,
+.qr-btn {
+    background: transparent;
+    border: 1px solid var(--highlight);
+    border-radius: 8px;
+    padding: 0.4rem 0.8rem;
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    transition: background 0.3s, color 0.3s;
+    cursor: pointer;
+}
+.nav-buttons a:hover,
+.qr-btn:hover{
+    background-color: var(--highlight);
+    color: #fff;
+}
+nav { 
+    display: flex; 
+    align-items: center; 
+    gap: 1.5rem; 
+}
+nav a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+}
+nav a:hover {
+    color: var(--highlight);
+}
+.qr-btn {
+    background-color: var(--highlight);
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor:pointer;
+}
+/*Seccion Principal*/
+body {
+  font-family: 'Segoe Ui';
+  margin: 20px;
+}
+h2{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--highlight);
+}
+label {
+    display: inline-block;
+    margin-right: 10px;
+    font-weight: bold;
+}
+input[type="date"] {
+    background-color: #1a1a1a;
+    color: #e6e6e6;
+    border-color: #ff6600;
+    width: 200px;
+    padding: 5px;
+    cursor: pointer;
+}
+h3{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--highlight);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #ff6600;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #1a1a1a;
+}
+tbody {
+    background-color: #0d0d0d;
+    color: #e6e6e6;
+}
+tbody tr:nth-child(even) {
+    background-color: #1a1a1a;
+}
+tbody tr {
+    border: 1px solid #ff6600;
+}
+tbody td {
+    border: 1px solid #ff6600;
+    padding: 8px;
+}
+button {
+    background: transparent;
+    border: 1px solid var(--highlight);
+    border-radius: 8px;
+    padding: 0.4rem 0.8rem;
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    transition: background 0.3s, color 0.3s;
+    cursor: pointer;
+}
+button:hover {
+  background-color: #ff6600;
+}
